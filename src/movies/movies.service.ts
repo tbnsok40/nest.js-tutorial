@@ -24,7 +24,6 @@ export class MoviesService {
   }
 
   create(movieData:CreateMovieDto) {
-    // @ts-ignore
     this.movies.push({
       id: this.movies.length + 1,
       ...movieData

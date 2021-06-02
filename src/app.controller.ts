@@ -1,7 +1,6 @@
 import { Controller, Get } from "@nestjs/common";
-import exp from "constants";
 
-@Controller("")
+@Controller('home')
 export class AppController{
   @Get()
   home() {

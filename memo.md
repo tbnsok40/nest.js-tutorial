@@ -55,3 +55,17 @@ nest g co -> movies : 디렉토리의 이름이 된다.
 - app.module 내부에 import 된 수많은 모듈들이 하나의 모듈로 생성된다. by NestFactory.create(AppModule) in Main.ts
 
 - provider 위치에 MovieService 를 넣어줘야 DI 도 할 수 있다.
+
+- Nest.js 는 express 위에서 실행된다.
+- express 를 fastify 로 대체할 수 있다. 2 times faster than express
+
+- jest : JS 를 쉽게 테스트 하는 npm 패키지
+- .spec : test 용 파일
+- cov: coverage
+- e2e: testing a whole system
+- unittest: module test
+
+- it: stands for individual test
+- unit test 시, service.create()부분을 it()구문 아래로 넣어야한다.
+
+- npm run test:cov, test coverage 를 시각적으로 확인할 수 있다.

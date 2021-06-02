@@ -8,5 +8,5 @@ export class CreateMovieDto{
   readonly year: number;
 
   @IsString({each: true})
-  readonly genres: string;
+  readonly genres: string[];
 }
