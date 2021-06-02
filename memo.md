@@ -12,3 +12,6 @@ Nest는 controller 와 service 를 구분짓고 싶어함
 그리고 결국 controller 든 service 든 app.module 에 들어가게 돼 있다. app.module 의 세팅하에 controller, service 역할 분담
 
 
+### cli tip
+- nest => 명령어 확인 가능
+- nest generate controller => nest g co
