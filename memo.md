@@ -36,13 +36,22 @@ nest g co -> movies : 디렉토리의 이름이 된다.
 
 - pipe is like a middleware
 
-- transform : true -> request의 id(string) 을 자동으로 number type 으로 변환시켜준다.
+
+> #### class Validator, class Transformer
+- npm i class-validator class-transformer
+  
+- transform : true -> request 의 id(string) 을 자동으로 number type 으로 변환시켜준다.
 - nest js 는 타입을 받아서 자동으로 변환시켜준다,. thanks to validation pipe, and thanks to framework.
 
-- imseonghu@imseonghuui-MacBookPro hi-nest % npm i @nestjs/mapped-types
-- imseonghu@imseonghuui-MacBookPro hi-nest % npm i class-validator class-transformer
+> #### PartialType validation check
+- npm i @nestjs/mapped-types
+- PartialType needs basic data type in this case it is CreateMovieDto
 
-- // PartialType needs basit data type in this case it is CreateMovieDto
 
 - 유효성 검사를 따로 할 필요가 없다. 큰 장점임.
 
+- AppModule 은 AppController 와 AppService 만 가져야 한다.
+- 앱을 만들 때 모듈로 분리하는 것이 좋다, import 를 사용하여 필요한 모듈을 가져온다.
+- app.module 내부에 import 된 수많은 모듈들이 하나의 모듈로 생성된다. by NestFactory.create(AppModule) in Main.ts
+
+- provider 위치에 MovieService 를 넣어줘야 DI 도 할 수 있다.
