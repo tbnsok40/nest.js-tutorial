@@ -16,10 +16,10 @@ describe("AppController (e2e)", () => {
       new ValidationPipe({
           whitelist: true,
           forbidNonWhitelisted: true,
-          transform: true,
+          transform: true
         }
       )
-    )
+    );
     await app.init();
   });
 
@@ -60,9 +60,33 @@ describe("AppController (e2e)", () => {
         .expect(404);
     });
 
+    it("POST", () => {
+      return request(app.getHttpServer())
+        .post("/movies")
+        .send({
+          title: "New Avengers",
+          genres: ["MARVEL"],
+          year: 2022
+        })
+        .expect(201);
+    });
+
+    it("POST", () => {
+      return request(app.getHttpServer())
+        .post("/movies")
+        .send({
+          name: "New Avengers",
+          genre: ["MARVEL"],
+          year: 2022
+        })
+        .expect(400);
+    });
+
     it("PATCH", () => {
       return request(app.getHttpServer())
-        .patch("/movies/1").expect(200);
+        .patch("/movies/1")
+        .send({ title: "Updated Test" })
+        .expect(200);
     });
 
     it("DELETE", () => {
@@ -70,5 +94,5 @@ describe("AppController (e2e)", () => {
         .delete("/movies/1")
         .expect(200);
     });
-  })
+  });
 });
