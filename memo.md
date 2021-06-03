@@ -69,3 +69,19 @@ nest g co -> movies : 디렉토리의 이름이 된다.
 - unit test 시, service.create()부분을 it()구문 아래로 넣어야한다.
 
 - npm run test:cov, test coverage 를 시각적으로 확인할 수 있다.
+
+- e2e: end to end test. movie 와 관련된 애플리케이션의 모든 부분을 테스트 할 때 필요
+
+
+- 해당 부분을 e2e test 환경에서도 똑같이 설정해줘야한다. 
+- 어플리케이션 환경과 테스트의 환경을 같게 만들어주기 위함. 
+ ```typescript
+    app.useGlobalPipes(
+      new ValidationPipe({
+          whitelist: true,
+          forbidNonWhitelisted: true,
+          transform: true,
+        }
+      )
+    )
+```
