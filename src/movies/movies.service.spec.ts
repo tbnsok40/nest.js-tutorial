@@ -40,11 +40,11 @@ describe("MoviesService", () => {
     it("should throw 404 ", () => {
       try {
         service.getOne(999);
-      } catch (e){
+      } catch (e) {
         expect(e).toBeInstanceOf(NotFoundException);
-        expect(e.message).toEqual("Movie with id 999 not found")
+        expect(e.message).toEqual("Movie with id 999 not found");
       }
-    })
+    });
   });
 
 
@@ -71,11 +71,27 @@ describe("MoviesService", () => {
         genres: ["tests"],
         year: 2000
       });
-      const updateState = "updatedTest"
+      const updateState = "updatedTest";
       service.update(1, {
-        title: updateState,
-      })
-      expect(service.getOne(1).title).toEqual(updateState)
+        title: updateState
+      });
+      expect(service.getOne(1).title).toEqual(updateState);
+    });
+  });
+
+  describe("deleteOne", () => {
+    it("deletes a movie", () => {
+      service.create({
+        title: "Test",
+        genres: ["test"],
+        year: 2000
+      });
+      const allMovies = service.getAll().length;
+      service.deleteOne(1);
+      const afterDelete = service.getAll().length;
+      expect(afterDelete).toBeLessThan(allMovies);
+
+
     });
   });
 });
