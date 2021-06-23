@@ -30,6 +30,9 @@
 `nest g s contacts` |
 `Service` 컨트롤러에서 받은 요청을 실제로 실행하는 구현부
 
+
+`npm run start:dev`
+
 > ## Module
 
 - module: Controller, Provider 세팅, root module, 장고의 APP 개념으로 하나의 application 을 의미
