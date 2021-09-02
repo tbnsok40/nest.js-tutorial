@@ -9,8 +9,6 @@
 > ### 준비 사항 (클릭 시 링크 이동)
 
 - [`insomnia`](https://insomnia.rest/pricing) 설치
-- [`Postgresql`](https://www.postgresql.org/download/) 설치
-- [`Postico`](https://eggerapps.at/postico/) 설치
 
 <hr/>
 
